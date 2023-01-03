@@ -48,7 +48,7 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public Post updatePost(PostDto postDto, Integer postId) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 
