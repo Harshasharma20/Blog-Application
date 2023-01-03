@@ -1,9 +1,15 @@
 package com.spring.boot.BlogApp.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category {
@@ -13,11 +19,28 @@ public class Category {
 	private Integer categoryId;
 	private String categoryTitle;
 	private String categoryDescription;
+	
+	@OneToMany(mappedBy="category",cascade=CascadeType.ALL,fetch=FetchType.LAZY)
+	private List<Post> posts = new ArrayList<>();
+	
 	public Integer getCategoryId() {
 		return categoryId;
 	}
 	public void setCategoryId(Integer categoryId) {
 		this.categoryId = categoryId;
+	}
+	public Category(Integer categoryId, String categoryTitle, String categoryDescription, List<Post> posts) {
+		super();
+		this.categoryId = categoryId;
+		this.categoryTitle = categoryTitle;
+		this.categoryDescription = categoryDescription;
+		this.posts = posts;
+	}
+	public List<Post> getPosts() {
+		return posts;
+	}
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 	public String getCategoryTitle() {
 		return categoryTitle;
