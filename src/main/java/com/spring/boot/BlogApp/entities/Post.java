@@ -19,7 +19,7 @@ public class Post {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer postId;
 	
-	@Column(name="post_title",length=100,nullable=false)
+	//@Column(length=100,nullable=false)
 	private String title;
 	private String content;
 	private String imageName;
@@ -102,7 +102,7 @@ public class Post {
 
 	public Post() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	
 }

@@ -16,21 +16,7 @@ import javax.persistence.Table;
 @Table(name="users")
 public class User {
 	
-	public User(int id, String name, String email, String password, String about, List<Post> posts) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.email = email;
-		this.password = password;
-		this.about = about;
-		this.posts = posts;
-	}
-	public List<Post> getPosts() {
-		return posts;
-	}
-	public void setPosts(List<Post> posts) {
-		this.posts = posts;
-	}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
@@ -87,6 +73,21 @@ public class User {
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", about=" + about
 				+ "]";
+	}
+	public User(int id, String name, String email, String password, String about, List<Post> posts) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.about = about;
+		this.posts = posts;
+	}
+	public List<Post> getPosts() {
+		return posts;
+	}
+	public void setPosts(List<Post> posts) {
+		this.posts = posts;
 	}
 		
 }

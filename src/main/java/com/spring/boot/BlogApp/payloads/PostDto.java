@@ -7,15 +7,26 @@ import com.spring.boot.BlogApp.entities.User;
 
 public class PostDto {
 	
+	public PostDto(String title, String content, String imageName, Date addedDate, Category categoryDto,
+			UserDto userDto) {
+		super();
+		this.title = title;
+		this.content = content;
+		this.imageName = imageName;
+		this.addedDate = addedDate;
+		this.categoryDto = categoryDto;
+		this.userDto = userDto;
+	}
+
 	private String title;
 	private String content;
 	private String imageName;
 	private Date addedDate;
 	
 	
-	private Category category;
+	private Category categoryDto;
 	
-	private User user;
+	private UserDto userDto;
 
 	public String getTitle() {
 		return title;
@@ -49,38 +60,24 @@ public class PostDto {
 		this.addedDate = addedDate;
 	}
 
-	public Category getCategory() {
-		return category;
+	public Category getCategoryDto() {
+		return categoryDto;
 	}
 
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setCategoryDto(Category categoryDto) {
+		this.categoryDto = categoryDto;
 	}
 
-	public User getUser() {
-		return user;
+	public UserDto getUserDto() {
+		return userDto;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setUserDto(UserDto userDto) {
+		this.userDto = userDto;
 	}
 
-	public PostDto(String title, String content, String imageName, Date addedDate, Category category, User user) {
-		super();
-		this.title = title;
-		this.content = content;
-		this.imageName = imageName;
-		this.addedDate = addedDate;
-		this.category = category;
-		this.user = user;
-	}
 
-	public PostDto() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-	
-	
+
 	
 
 }
